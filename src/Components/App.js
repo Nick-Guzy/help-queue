@@ -1,14 +1,14 @@
 import React from "react";
 import Header from "./Header";
-import TicketList from "./TicketList";
 import SearchBar from "./SearchBar";
+import TicketControl from "./TicketControl";
 
 function App() {
   return (
    <React.Fragment>
     <SearchBar />
     <Header />
-    <TicketList />
+    <TicketControl />
    </React.Fragment>
   );
 }
