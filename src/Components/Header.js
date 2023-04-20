@@ -1,10 +1,10 @@
 import React from "react";
 import ticketsImage from "./../img/tickets.png";
 
-function Header(){
+function Header() {
   return (
-    <React.Fragment>  
-      <img src={ticketsImage} alt="Tickets"/>
+    <React.Fragment>
+      <img src={ticketsImage} alt="Tickets" />
     </React.Fragment>
   );
 }

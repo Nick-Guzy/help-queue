@@ -5,11 +5,11 @@ import TicketControl from "./TicketControl";
 
 function App() {
   return (
-   <React.Fragment>
-    <SearchBar />
-    <Header />
-    <TicketControl />
-   </React.Fragment>
+    <React.Fragment>
+      <SearchBar />
+      <Header />
+      <TicketControl />
+    </React.Fragment>
   );
 }
 
