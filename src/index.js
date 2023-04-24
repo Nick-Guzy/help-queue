@@ -4,11 +4,11 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './Components/App';
 import reportWebVitals from './reportWebVitals';
-import { createStore } from 'redux';
+import { configureStore } from 'redux';
 import reducer from './reducers/ticket-list-reducer';
 import { Provider } from 'react-redux';
 
-const store = createStore(reducer);
+const store = configureStore(reducer);
 
 store.subscribe(() => 
 console.log(store.getState())

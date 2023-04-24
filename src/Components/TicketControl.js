@@ -1,10 +1,10 @@
-import React from "react";
-import NewTicketForm from "./NewTicketForm";
-import TicketList from "./TicketList";
-import TicketDetail from "./TicketDetail";
-import EditTicketForm from "./EditTicketForm";
+import React from 'react';
+import NewTicketForm from './NewTicketForm';
+import TicketList from './TicketList';
+import TicketDetail from './TicketDetail';
+import EditTicketForm from './EditTicketForm';
 import { connect } from 'react-redux';
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 class TicketControl extends React.Component {
   constructor(props) {
@@ -31,7 +31,7 @@ class TicketControl extends React.Component {
   };
 
   handleEditClick = () => {
-    console.log("handleEditClick reached!");
+    console.log('handleEditClick reached!');
     this.setState({ editing: true });
   };
 
@@ -88,7 +88,7 @@ class TicketControl extends React.Component {
       currentlyVisibleState = (
         <EditTicketForm ticket = {this.state.selectedTicket} onEditTicket = {this.handleEditingTicketInList} />
       );
-      buttonText = "Return to Ticket List";
+      buttonText = 'Return to Ticket List';
     } else if (this.state.selectedTicket != null) {
       currentlyVisibleState = (
         <TicketDetail
@@ -97,15 +97,15 @@ class TicketControl extends React.Component {
           onClickingEdit={this.handleEditClick}
         />
       );
-      buttonText = "Return to Ticket List";
+      buttonText = 'Return to Ticket List';
     } else if (this.state.formVisibleOnPage) {
       currentlyVisibleState = (
         <NewTicketForm onNewTicketCreation={this.handleAddingNewTicketToList} />
       );
-      buttonText = "Return to Ticket List";
+      buttonText = 'Return to Ticket List';
     } else {
       currentlyVisibleState = <TicketList ticketList={this.props.mainTicketList} onTicketSelection={this.handleChangingSelectedTicket} />;
-      buttonText = "Add Ticket";
+      buttonText = 'Add Ticket';
     }
     return (
       <React.Fragment>
