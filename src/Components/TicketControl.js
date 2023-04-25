@@ -25,6 +25,9 @@ class TicketControl extends React.Component {
         editing: false
       });
     } else {
+      const { dispatch } = this.props;
+      const action = a.toggleForm();
+      dispatch(action);
       // this.setState((prevState) => ({
       //   formVisibleOnPage: !prevState.formVisibleOnPage,
       // }));
@@ -50,19 +53,22 @@ class TicketControl extends React.Component {
 
   handleAddingNewTicketToList = (newTicket) => {
     const { dispatch } = this.props;
-    const { id, names, location, issue } = newTicket;
-    const action = {
-      type: 'ADD_TICKET',
-      id: id,
-      names: names,
-      location: location,
-      issue: issue,
-    }
+    // const { id, names, location, issue } = newTicket;
+    // const action = {
+    //   type: 'ADD_TICKET',
+    //   id: id,
+    //   names: names,
+    //   location: location,
+    //   issue: issue,
+    // }
+    const action = a.addTicket(newTicket);
     dispatch(action);
-    const action2 = {
-      type: 'TOGGLE_FORM'
-    }
-    dispatch(action2);
+    const action2 = a.toggleForm();
+    dispatch(action2)
+    // const action2 = {
+    //   type: 'TOGGLE_FORM'
+    // }
+    // dispatch(action2);
     // this.setState({formVisibleOnPage: false});
   }
 
@@ -73,10 +79,11 @@ class TicketControl extends React.Component {
 
   handleDeletingTicket = (id) => {
     const { dispatch } = this.props;
-    const action = {
-      type: 'DELETE_TICKET',
-      id: id
-    }
+    const action = a.deleteTicket(id);
+    // const action = {
+    //   type: 'DELETE_TICKET',
+    //   id: id
+    // }
     dispatch(action);
     this.setState({selectedTicket: null});
   }
