@@ -19,7 +19,7 @@ const reducer = (state = {}, action) => {
       delete newState[id];
       return newState;
 
-      case c.UPDATE_TIME:
+      case c.'UPDATE_TIME':
         const newTicket = Object.assign({}, state[id], {fromattedWaitTime});
         const updatedState = Object.assign({}, state, {
           [id]: newTicket
