@@ -104,5 +104,6 @@ describe("ticketListReducer", () => {
           formattedWaitTime: 'less than a minute ago',
           id: id
         }
+    });
   });
 });
