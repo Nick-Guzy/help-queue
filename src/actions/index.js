@@ -14,3 +14,7 @@ export const addTicket = (ticket) => {
   }
 }
 
+export const toggleForm = () => ({
+  type: 'TOGGLE_FORM'
+});
+
