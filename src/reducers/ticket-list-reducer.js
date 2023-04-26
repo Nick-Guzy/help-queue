@@ -1,5 +1,7 @@
+import * as c from './../actions/ActionTypes';
+
 const reducer = (state = {}, action) => {
-  const { names, location, issue, id } = action;
+  const { names, location, issue, id, fromattedWaitTime, timeOpen } = action;
   switch (action.type) {
     case 'ADD_TICKET':
       return Object.assign({}, state, {
@@ -7,15 +9,24 @@ const reducer = (state = {}, action) => {
           names: names,
           location: location,
           issue: issue,
-          id: id,
-        }
+          timeOpen: timeOpen,
+          fromattedWaitTime: fromattedWaitTime,
+          id: id
+        }      
       });
     case 'DELETE_TICKET':
       let newState = { ...state };
       delete newState[id];
       return newState;
-    default:
-      return state;
+
+      case c.UPDATE_TIME:
+        const newTicket = Object.assign({}, state[id], {fromattedWaitTime});
+        const updatedState = Object.assign({}, state, {
+          [id]: newTicket
+        });
+        return updatedState;
+        default:
+          return state;
   }
 };
 
