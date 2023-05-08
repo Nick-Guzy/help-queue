@@ -11,6 +11,7 @@ function Ticket(props) {
         <p>
           <em>{props.issue}</em>
         </p>
+        <p><em>{props.formattedWaitTime}</em></p>
         <hr />
       </div>
     </React.Fragment>
@@ -23,6 +24,7 @@ Ticket.propTypes = {
   issue: PropTypes.string,
   id: PropTypes.string,
   whenTicketClicked: PropTypes.func,
+  formattedWaitTime: PropTypes.string
 };
 
 export default Ticket;
