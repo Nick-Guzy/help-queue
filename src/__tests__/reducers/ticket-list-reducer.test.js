@@ -1,4 +1,4 @@
-import { is } from 'date-fns/locale';
+// import { is } from 'date-fns/locale';
 import ticketListReducer from '../../reducers/ticket-list-reducer';
 import { formatDistanceToNow } from 'date-fns';
 import * as c from './../actions/ActionTypes';

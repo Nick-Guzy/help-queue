@@ -21,7 +21,9 @@ function App() {
     <ThemeContext.Provider value={theme}>
       <SearchBar />
       <Header />
-      <ToggleTheme toggleTheme={toggleTheme} />
+      <ThemeContext.Consumer>
+      {contextTheme => <ToggleTheme theme={contextTheme} toggleTheme={toggleTheme} />}
+      </ThemeContext.Consumer>
       <TicketControl />
     </ThemeContext.Provider>
   );
